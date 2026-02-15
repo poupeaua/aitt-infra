@@ -27,3 +27,13 @@ In order to manage the version of Terraform, we use the
 ## Environment management
 
 This is currently only one single environment for this project, named dev.
+
+# Setup
+
+## Environment variables
+
+```bash
+export AWS_PROFILE="your-aws-profile"
+export AWS_DEFAULT_REGION="your-region"
+export TF_VAR_vpc_id="aws-vpc-id"
+```
