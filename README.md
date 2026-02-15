@@ -18,3 +18,12 @@ Compose because we want to have more control over the deployment process.
 This way we can ensure independant deployment. This was a way to train a bit and 
 experiment with Microservice Architecture in a simple fashion with the best-practices
 that come with it.
+
+## Terraform version
+
+In order to manage the version of Terraform, we use the 
+[tfenv](https://github.com/tfutils/tfenv) tool.
+
+## Environment management
+
+This is currently only one single environment for this project, named dev.
