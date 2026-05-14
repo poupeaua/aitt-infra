@@ -81,9 +81,15 @@ resource "aws_iam_policy" "ec2_policy" {
     Version = "2012-10-17"
     Statement = [
       {
+      "Effect" : "Allow",
+      "Action" : [
+        "ecr:GetAuthorizationToken"   # is account-level so it needs *
+      ],
+      "Resource" : "*"
+    },
+      {
         "Effect" : "Allow",
         "Action" : [
-          "ecr:GetAuthorizationToken",
           "ecr:BatchCheckLayerAvailability",
           "ecr:GetDownloadUrlForLayer",
           "ecr:GetRepositoryPolicy",
