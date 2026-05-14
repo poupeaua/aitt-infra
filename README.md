@@ -32,8 +32,28 @@ This is currently only one single environment for this project, named dev.
 
 ## Environment variables
 
+Set them using the following command:
+
 ```bash
-export AWS_PROFILE="your-aws-profile"
-export AWS_DEFAULT_REGION="your-region"
-export TF_VAR_vpc_id="aws-vpc-id"
+source .env
 ```
+
+Set the `.env` by following the example file: `.env.example`
+
+# Full Deployment of the AIIT Application
+
+Even though this is just the Terraform repository. Here is the full deployment setup.
+
+Check the infrastructure schema seen before to better understand what comes next.
+
+Here is the order to how to deploy the application fully:
+
+1. Terraform the infrastructure using this repository.
+2. Deploy the docker image in ECR using this repository: [aitt-symbol-clf](https://github.com/poupeaua/aitt-symbol-clf).
+3. Deploy the docker image in ECR using this repository: [aitt-core](https://github.com/poupeaua/aitt-core).
+4. Setup the EC2 + Deploy the container `aitt-symbol-clf` using the Ansible repository: [aitt-symbol-clf-deploy](https://github.com/poupeaua/aitt-symbol-clf-deploy). 
+5. Setup NGINX + Deploy the container `aitt-core` using the Ansible repository: [aitt-core-deploy](https://github.com/poupeaua/aitt-core-deploy).
+
+Each repository contains its own documentation.
+
+You are all done!
